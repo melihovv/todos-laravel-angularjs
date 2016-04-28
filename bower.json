@@ -1,0 +1,17 @@
+{
+  "name": "todos-laravel-angularjs",
+  "description": "Simple todos app",
+  "main": "",
+  "authors": [
+    "Alexander Melihov <amelihovv@ya.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/melihovv/todos-laravel-angularjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

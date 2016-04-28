@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^5.0.0",
+    "bootstrap-sass": "^3.0.0"
+  },
+  "name": "todos-laravel-angularjs",
+  "description": "Simple todos app",
+  "version": "0.1.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melihovv/todos-laravel-angularjs.git"
+  },
+  "keywords": [
+    "todos",
+    "angularjs"
+  ],
+  "author": "Alexander Melihov <amelihovv@ya.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/melihovv/todos-laravel-angularjs/issues"
+  },
+  "homepage": "https://github.com/melihovv/todos-laravel-angularjs#readme"
+}

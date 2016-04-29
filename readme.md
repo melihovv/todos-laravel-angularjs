@@ -5,7 +5,8 @@ Simple todos app
 2. composer install
 3. copy .env.example to .env file
 4. fill credentials for db connection in .env file
-5. npm install
-6. bower install
-7. maybe change proxy property in browser-sync task in gulpfile
-8. gulp
+5. php artisan migrate --seed
+6. npm install
+7. bower install
+8. maybe change proxy property in browser-sync task in gulpfile
+9. gulp

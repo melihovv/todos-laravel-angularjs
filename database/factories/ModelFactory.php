@@ -11,11 +11,21 @@
 |
 */
 
-$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+use App\Models\Task;
+use App\Models\User;
+
+$factory->define(User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(Task::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->words(3, true),
+        'completed' => $faker->boolean(),
     ];
 });

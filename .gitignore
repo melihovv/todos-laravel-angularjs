@@ -54,3 +54,5 @@ Homestead.json
 .env
 _ide_helper.php
 .phpstorm.meta.php
+/resources/assets/vendor
+/public/assets

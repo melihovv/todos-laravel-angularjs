@@ -11,7 +11,9 @@
 |
 */
 
-Route::resource('task', 'TaskController');
+Route::singularResourceParameters();
+
+Route::resource('tasks', 'TaskController');
 
 Route::get('/', function () {
     return view('home.index');

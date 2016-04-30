@@ -1,0 +1,24 @@
+<div>
+
+  <h3 class="page-header">
+    Todos
+    <small ng-if="todoCtrl.remaining()">
+      {{ todoCtrl.remaining() }} remaining
+    </small>
+  </h3>
+
+  <ul>
+    <li ng-repeat="todo in todoCtrl.todos">
+      <input type="checkbox" ng-model="todo.completed"
+             ng-click="todoCtrl.toggleCompleted(todo)">
+      <a ng-href="#/tasks/{{todo.id}}">{{todo.title}}</a>
+
+      <span class="glyphicon glyphicon-remove"
+            ng-click="todoCtrl.delete(todo)">
+      </span>
+    </li>
+  </ul>
+
+  <a href="#/tasks/create">Add new</a>
+
+</div>

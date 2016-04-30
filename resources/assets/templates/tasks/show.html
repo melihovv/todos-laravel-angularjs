@@ -1,0 +1,16 @@
+<div>
+
+  <form ng-submit="todoCtrl.update()">
+    <label>
+      Title
+      <input type="text" ng-model="todoCtrl.todo.title"
+             placeholder="Input task">
+    </label>
+    <label>
+      Completed
+      <input type="checkbox" ng-model="todoCtrl.todo.completed">
+    </label>
+    <input type="submit" value="Update">
+  </form>
+
+</div>

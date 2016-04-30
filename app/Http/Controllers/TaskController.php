@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 use App\Http\Requests;
+use PDOException;
 
 class TaskController extends Controller
 {
@@ -19,15 +20,6 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param TaskRequest $request
@@ -35,6 +27,13 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request)
     {
+        try {
+            Task::create(array_merge($request->all(), ['completed' => false,]));
+
+            return response()->json(['success' => true]);
+        } catch (PDOException $e) {
+            return response()->json(['error' => 'Could not create task'], 500);
+        }
     }
 
     /**
@@ -45,16 +44,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Task $task
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Task $task)
-    {
+        return $task;
     }
 
     /**
@@ -66,6 +56,13 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Task $task)
     {
+        try {
+            $task->update($request->all());
+
+            return response()->json(['success' => true]);
+        } catch (PDOException $e) {
+            return response()->json(['error' => 'Could not update task'], 500);
+        }
     }
 
     /**
@@ -76,5 +73,12 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        try {
+            $task->delete();
+
+            return response()->json(['success' => true]);
+        } catch (PDOException $e) {
+            return response()->json(['error' => 'Could not delete task'], 500);
+        }
     }
 }

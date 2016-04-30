@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en" ng-app="app.todos">
+<html lang="en" ng-app="todosApp">
 <head>
+  <base href="/">
   <meta charset="UTF-8">
-  <title>Todos</title>
+  <title>Tasks</title>
 
   {!! Html::style('assets/app.css') !!}
 </head>
 <body>
 
-<todos></todos>
+<h1>Todos</h1>
+<ng-view></ng-view>
 
 {!! Html::script('assets/app.js') !!}
 </body>

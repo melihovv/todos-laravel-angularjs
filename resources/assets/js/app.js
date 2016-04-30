@@ -1,32 +1,11 @@
 import '../vendor/angular/angular.min';
+import '../vendor/angular-route/angular-route.min.js';
+import '../vendor/angular-resource/angular-resource.min';
+import './services';
+import './directives';
 
-const app = angular.module('app.todos', []);
+const todosApp = angular.module('todosApp', [
+    'ngRoute', 'todosDirectives',
+]);
 
-app.service('TaskService', ['$http', function ($http) {
-    this.all = (success, error) => {
-        $http.get('/task').then(success, error);
-    };
-}]);
-
-app.directive('todos', () => {
-    return {
-        restrict: 'E',
-        template: require('../templates/todos.html'),
-        controller: ['TaskService', function (TaskService) {
-            this.todos = [];
-
-            TaskService.all((response) => {
-                this.todos = response.data;
-            }, () => {
-                console.log('error while fetching tasks');
-            });
-
-            this.remaining = () => {
-                return this.todos.filter((todo) => {
-                    return !todo.completed;
-                }).length;
-            };
-        }],
-        controllerAs: 'todoCtrl',
-    };
-});
+todosApp.config(['$routeProvider', require('./routes')]);

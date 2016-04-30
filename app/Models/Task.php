@@ -9,22 +9,21 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property integer $id
  * @property string $title
- * @property integer $priority
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property boolean $completed
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task wherePriority($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property boolean $completed
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereCompleted($value)
  */
 class Task extends Model
 {
     protected $fillable = [
-        'title', 'priority', 'completed',
+        'title', 'completed',
     ];
 
     protected $hidden = [

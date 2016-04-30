@@ -23,7 +23,7 @@ class TaskRequest extends Request
     {
         return [
             'title' => 'required',
-            'priority' => 'required|integer|min:0',
+            'completed' => 'boolean',
         ];
     }
 }

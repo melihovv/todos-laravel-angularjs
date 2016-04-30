@@ -13,7 +13,9 @@
 
 Route::singularResourceParameters();
 
-Route::resource('tasks', 'TaskController');
+Route::resource('tasks', 'TaskController', [
+    'except' => ['create', 'edit',],
+]);
 
 Route::get('/', function () {
     return view('home.index');

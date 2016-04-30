@@ -38,8 +38,10 @@ gulp.task('webpack-css', (callback) => {
 
 gulp.task('watch', () => {
     gulp.watch(
-        ['./resources/assets/js/app.js'],
-        ['./resources/assets/templates/**/*'],
+        [
+            './resources/assets/js/**/*',
+            './resources/assets/templates/**/*',
+        ],
         ['webpack']
     );
 
